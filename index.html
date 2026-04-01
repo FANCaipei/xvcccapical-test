@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>v-scroll Component Demo</title>
+  <script type="importmap">
+    {
+      "imports": {
+        "$/": "/src/theme/"
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 2rem;
+      background: #f0f0f0;
+    }
+    .scroll-container {
+      width: 400px;
+      height: 300px;
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+    .content-box {
+      padding: 1rem;
+      line-height: 1.6;
+    }
+    /* External styling control */
+    v-scroll::part(bar) {
+      --v-scroll-bar-bg: #4a90e2;
+      --v-scroll-bar-hover-bg: #357abd;
+      --v-scroll-bar-active-bg: #2a5f9e;
+    }
+  </style>
+</head>
+<body>
+  <h1>v-scroll Component</h1>
+  
+  <div class="scroll-container">
+    <v-scroll>
+      <div class="content-box">
+        <h2>Scroll Me!</h2>
+        <p>Welcom to vibe 1</p>
+        <p>Welcom to vibe 2</p>
+        <p>Welcom to vibe 3</p>
+        <p>Welcom to vibe 4</p>
+        <p>Welcom to vibe 5</p>
+        <p>Welcom to vibe 6</p>
+        <p>Welcom to vibe 7</p>
+        <p>Welcom to vibe 8</p>
+        <p>Welcom to vibe 9</p>
+        <p>Welcom to vibe 10</p>
+        <p>Welcom to vibe 11</p>
+        <p>Welcom to vibe 12</p>
+        <p>Welcom to vibe 13</p>
+        <p>Welcom to vibe 14</p>
+        <p>Welcom to vibe 15</p>
+        <p>Welcom to vibe 16</p>
+        <p>Welcom to vibe 17</p>
+        <p>Welcom to vibe 18</p>
+        <p>Welcom to vibe 19</p>
+        <p>Welcom to vibe 20</p>
+    </v-scroll>
+  </div>
+
+  <script type="module" src="/src/v-scroll.js"></script>
+</body>
+</html>
