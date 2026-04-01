@@ -38,10 +38,10 @@
 .v-scroll-thumb {
   display: block;
   position: absolute;
-  right: 3px;
-  width: 10px;
+  right: 4px;
+  width: 8px;
   background: var(--v-scroll-bar-bg, #ccc);
-  border-radius: 4px;
+  border-radius: 999px;
   cursor: pointer;
   pointer-events: auto;
   transition: background 0.2s, opacity 0.2s;
