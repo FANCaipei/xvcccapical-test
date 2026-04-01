@@ -35,6 +35,10 @@
   opacity: 1;
 }
 
+.v-scroll-track.visible {
+  opacity: 1;
+}
+
 .v-scroll-thumb {
   display: block;
   position: absolute;

@@ -1,6 +1,6 @@
 import CSS from '$/v-scroll.js';
 
-const MIN_THUMB_HEIGHT = 16, PADDING = 3;
+const MIN_THUMB_HEIGHT = 16, PADDING = 3, HIDE_DELAY = 700;
 
 const setup_styles = (root, css_text) => {
   const style = document.createElement('style');
@@ -18,6 +18,7 @@ const create_v_scroll = () => {
     #track;
     #thumb;
     #resize_observer;
+    #hide_timer;
     #is_dragging = false;
     #start_y = 0;
     #start_scroll_top = 0;
@@ -68,12 +69,22 @@ const create_v_scroll = () => {
       if (this.#is_dragging) {
         this.#on_pointer_up();
       }
+      if (this.#hide_timer) {
+        clearTimeout(this.#hide_timer);
+        this.#hide_timer = null;
+      }
     }
 
     #on_scroll = () => {
       if (!this.#is_dragging) {
         this.#update_thumb_position();
       }
+      this.#track.classList.add('visible');
+      if (this.#hide_timer) clearTimeout(this.#hide_timer);
+      this.#hide_timer = setTimeout(() => {
+        this.#track.classList.remove('visible');
+        this.#hide_timer = null;
+      }, HIDE_DELAY);
     };
 
     #update_scrollbar = () => {
